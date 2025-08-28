@@ -1,0 +1,8 @@
+streamlit
+datasets
+sentence-transformers
+chromadb
+openai
+ollama
+torch
+numpy
