@@ -6,3 +6,4 @@ openai
 ollama
 torch
 numpy
+pysqlite3-binary
