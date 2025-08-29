@@ -7,9 +7,9 @@ import json
 from datetime import datetime
 import os
 import sys
-import pysqlite3
 
-sys.modules["sqlite3"] = pysqlite3
+__import__('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 MODEL = "mistral:latest"
 openai = ollama.OpenAI(
