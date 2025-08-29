@@ -18,3 +18,16 @@ El objetivo es ofrecer un recurso preciso y eficiente que responda a consultas e
 - Sentence Transformers
 - Datasets (Hugging Face)
 - JSON
+## 🔮 Próximas Mejoras y Hoja de Ruta
+Las siguientes funcionalidades están planificadas para futuras versiones, con el objetivo de hacer del sistema una herramienta aún más robusta y útil:
+- **Evaluación automática de respuestas**: Implementar un sistema para calificar la precisión y relevancia de las respuestas generadas.
+- **Cambio de modelo desde la interfaz**: Añadir la opción de seleccionar y usar diferentes modelos de lenguaje directamente desde la UI de Streamlit.
+- **Exportar resultados**: Permitir la exportación de conversaciones o resultados de búsqueda a formatos como CSV o JSON para análisis externos.
+- **Filtros semánticos**: Implementar la capacidad de filtrar documentos por categorías o temas, mejorando la precisión de la recuperación.
+- **Pruebas unitarias**: Desarrollar pruebas para asegurar que cada componente del sistema funcione correctamente y de forma aislada.
+## 🤝 Contacto
+Si tienes alguna pregunta sobre el proyecto, te interesa mi trabajo o quieres hablar sobre una oportunidad profesional, no dudes en contactarme.
+
+**Luana Genes**
+
+**Email**: genesluana275@gmail.com o luanagenes275@gmail.com
