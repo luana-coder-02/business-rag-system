@@ -1,3 +1,4 @@
+import ollama
 import sys
 try:
     import pysqlite3  # fuerza la carga de sqlite nuevo
@@ -8,16 +9,11 @@ import streamlit as st
 from datasets import load_dataset
 from sentence_transformers import SentenceTransformer
 from chromadb import PersistentClient
-import ollama
 import json
 from datetime import datetime
 import os
 
 MODEL = "mistral:latest"
-openai = ollama.OpenAI(
-    base_url="http://localhost:11434/v1",
-    api_key=os.environ.get("OLLAMA_API_KEY")
-)
 
 dataset = load_dataset("aumghag/Data-Analytics-Digital-Marketing-Project-Management-QA_DB")
 train_data = dataset["train"]
