@@ -7,3 +7,4 @@ ollama
 torch
 numpy
 pysqlite3-binary
+mistral
