@@ -1,7 +1,7 @@
 streamlit
 datasets
 sentence-transformers
-chromadb
+chromadb>=0.5.0
 openai
 ollama
 torch
