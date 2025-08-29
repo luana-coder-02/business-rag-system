@@ -1,3 +1,9 @@
+import sys
+try:
+    import pysqlite3  # fuerza la carga de sqlite nuevo
+    sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+except Exception as e:
+    print("⚠️ No se pudo aplicar fix de pysqlite3:", e)
 import streamlit as st
 from datasets import load_dataset
 from sentence_transformers import SentenceTransformer
@@ -6,10 +12,6 @@ import ollama
 import json
 from datetime import datetime
 import os
-import sys
-
-__import__('pysqlite3')
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 MODEL = "mistral:latest"
 openai = ollama.OpenAI(
