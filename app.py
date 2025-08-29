@@ -14,7 +14,6 @@ from datetime import datetime
 import os
 
 MODEL = "mistral:latest"
-
 dataset = load_dataset("aumghag/Data-Analytics-Digital-Marketing-Project-Management-QA_DB")
 train_data = dataset["train"]
 
