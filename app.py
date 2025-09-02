@@ -1,16 +1,16 @@
-import ollama
-import sys
-try:
-    import pysqlite3  # fuerza la carga de sqlite nuevo
-    sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
-except Exception as e:
-    print("⚠️ No se pudo aplicar fix de pysqlite3:", e)
-import streamlit as st
 from datasets import load_dataset
+import streamlit as st
 from sentence_transformers import SentenceTransformer
+import chromadb
+from chromadb.config import Settings
 from chromadb import PersistentClient
-import json
+import numpy as np
+from openai import OpenAI
 from datetime import datetime
+import re
+import json
+import ollama
+import torch
 import os
 
 MODEL = "mistral:latest"
@@ -112,23 +112,3 @@ Answer clearly and concisely based ONLY on the context above.
     user_histories[user_id] = chat_log
 
     return answer
-
-st.title("💼 Commercial RAG Chat")
-
-user_id = st.text_input("Enter your user ID:")
-
-if user_id:
-    st.write(f"Welcome, **{user_id}**! Ask questions below:")
-
-    question = st.text_input("Your question:")
-
-    if st.button("Ask") and question:
-        answer = rag_answer(question, user_id)
-        st.success(answer)
-
-    # Mostrar historial del usuario
-    if user_id in user_histories and user_histories[user_id]:
-        st.subheader("📜 Conversation history")
-        for i, turn in enumerate(user_histories[user_id][::-1]):
-            with st.expander(f"Q{i+1}: {turn['question']}", expanded=False):
-                st.write(turn['answer'])
