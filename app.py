@@ -112,3 +112,26 @@ Answer clearly and concisely based ONLY on the context above.
     user_histories[user_id] = chat_log
 
     return answer
+
+def ask_commercial_questions_multiuser():
+    """
+    Permite interacción multiusuario con el sistema RAG comercial.
+    """
+    user_id = input("Enter your user ID: ").strip()
+    print(f"💬 Welcome {user_id}! Ask commercial questions. Type 'exit' to quit.")
+
+    while True:
+        question = input("\nYour question: ").strip()
+
+        if question.lower() in ['exit', 'quit']:
+            print("👋 Goodbye!")
+            break
+
+        if not question:
+            print("⚠️ Please enter a question.")
+            continue
+
+        answer = rag_answer(question, user_id)
+        print("💼 Answer:", answer)
+
+ask_commercial_questions_multiuser()
