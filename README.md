@@ -19,6 +19,36 @@ El proyecto demuestra la capacidad de integrar un **LLM local** con una base de 
 - Sentence Transformers
 - Datasets (Hugging Face)
 - JSON
+
+## Instalación y Uso
+### Clonar el repositorio
+`git clone https://github.com/tu-usuario/commercial-rag-chat.git
+cd commercial-rag-chat`
+### Crear y activar un entorno virtual
+- `python -m venv venv`
+- `source venv/bin/activate` **En Linux/Mac**
+- `venv\Scripts\activate` **En Windows**
+### Instalar dependencias
+`pip install -r requirements.txt`
+### Instalar y configurar Ollama
+Descargar e instalar Ollama desde 👉 https://ollama.com/
+
+Luego, puedes descargar el modelo (**Mistral**), así:
+`ollama pull mistral`
+### Inicializar la base de datos vectorial
+La primera vez que ejecutes el sistema, se generará automáticamente la base de datos en `./chroma_db` e indexará los documentos:
+
+`python app.py --init`
+### Ejecutar el sistema RAG
+Para iniciar la interacción en consola:
+
+`python app.py`
+
+El programa pedirá un **user ID** y luego podrás hacer preguntas. Asegúrate de realizar las preguntas en inglés.
+
+Para salir, simplemente escribe:
+
+`exit`
 ## 🔮 Próximas Mejoras y Hoja de Ruta
 Las siguientes funcionalidades están planificadas para futuras versiones, con el objetivo de hacer del sistema una herramienta aún más robusta y útil:
 - **Evaluación automática de respuestas**: Calificación de precisión y relevancia.
